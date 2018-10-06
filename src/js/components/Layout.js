@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import LayoutHeader from './Layout-header'; 
+import LayoutFooter from './Layout-footer'; 
 
 export default class Layout extends Component {
     constructor(props) {
@@ -16,8 +18,10 @@ export default class Layout extends Component {
         const nombre = this.getNombre();
         return (
             <div>
+                <LayoutHeader />
                 <h1>Hola { nombre }</h1>
                 <p>{ this.getEdad() + ' Años' }</p>
+                <LayoutFooter />
             </div>
 
         );
