@@ -11,7 +11,7 @@ export default class TodoList extends Component {
                 <ul>
                     { 
                         todoList.map((todo) => 
-                            <Todo key={ todo.id } todo={ todo } />
+                            <Todo key={ todo.id } todo={ todo } removeTodo={this.props.removeTodo} /> 
                         )
                     }
                 </ul>

@@ -16,6 +16,12 @@ export default class Layout extends Component {
         this.state.todos.push(todo);
         this.setState({todos: this.state.todos});
     }
+    removeTodo(todo) {
+        // Aquí lógica
+        console.log('jajaj');
+        this.state.todos = this.state.todos.filter((todoList) => todoList.id != todo.id);
+        this.setState({todos: this.state.todos});
+    }
 
     render(){
 
@@ -23,7 +29,7 @@ export default class Layout extends Component {
             <div>
                 <LayoutHeader />
                 <TextBox addTodo={this.addTodo.bind(this)} />
-                <TodoList todoList={this.state.todos} />
+                <TodoList removeTodo={this.removeTodo.bind(this)} todoList={this.state.todos} />
                 <LayoutFooter tituloF={ "Este es el footer" } />
             </div>
         );

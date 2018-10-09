@@ -1,12 +1,10 @@
 import React from 'react';
 
-export default class LayoutHeader extends React.Component {
-
-    render(){
-        return (
-            <span>
-                <h1> {this.props.nombre}</h1>
-            </span>
-        );
-    }
-}
+ const LayoutHeader = ({nombre}) => {
+    return (
+        <span>
+            <h1> {nombre}</h1>
+        </span>
+    );
+};
+export default LayoutHeader;
