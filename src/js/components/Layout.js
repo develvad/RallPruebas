@@ -7,29 +7,24 @@ import TodoList from './TodoList'
 export default class Layout extends Component {
     constructor(props) {
         super(props);
-        this.state = {nombre: 'Vladi', edad: 36, cabecera: 'Esta es la cabecera 1'}
-        setTimeout(() => {
-            this.setState({nombre: 'Ñoooo', edad: 199, cabecera: 'Segunda cabecera'})
-        }, 2000)
-    }   
-    printMorl() {
-        console.log("Soy un Footer !!");
+        this.state = {
+            todos: []
+        }
+    }
+    addTodo(todo) {
+        console.log(this.state);
+        this.state.todos.push(todo);
+        this.setState({todos: this.state.todos});
     }
 
-    getNombre() {
-        return this.state.nombre;
-    }
-    getEdad() {
-        return this.state.edad;
-    }
     render(){
-        const nombre = this.getNombre();
+
         return (
             <div>
-                <LayoutHeader nombre={this.state.cabecera} />
-                <TextBox />
-                <TodoList />
-                <LayoutFooter tituloF={ "Este es el footer" } quees={this.printMorl} />
+                <LayoutHeader />
+                <TextBox addTodo={this.addTodo.bind(this)} />
+                <TodoList todoList={this.state.todos} />
+                <LayoutFooter tituloF={ "Este es el footer" } />
             </div>
         );
     }
