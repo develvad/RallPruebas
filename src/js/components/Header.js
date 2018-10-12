@@ -1,18 +1,12 @@
 import React from 'react';
 
-export default class Header extends React.Component {
+const Header = () => {
+    return (
+        <div>
+            <p> Cabcera General 2</p>
 
-    puede = "Podria decirse si."
-    head = 22;
-    getAll() {
-        return "Cabecera general";
-    }
-    render() {
-        return (
-            <div>
-                <p> { this.getAll() } </p>
+        </div>
+    )
+} 
 
-            </div>
-        )
-    }
-}
+export default Header;
